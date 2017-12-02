@@ -56,5 +56,5 @@ public class Director implements Serializable, IPrototype {
         return director;
     }
 
-    //мост, компоновщик, декоратор, фасад, прокси
+    //декоратор, фасад, прокси
 }
