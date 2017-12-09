@@ -7,7 +7,7 @@ import com.rayjackson.ood.builder.Builder3;
 import java.io.*;
 import java.util.List;
 
-public class Director implements Serializable, IPrototype {
+public class Director extends Decorator implements Serializable, IPrototype{
     private static Director director;
     private List<Integer> result;
 
@@ -56,5 +56,15 @@ public class Director implements Serializable, IPrototype {
         return director;
     }
 
-    //декоратор, фасад, прокси
+    @Override
+    public int findMax(List<Integer> list) {
+        return super.findMax(list);
+    }
+
+    @Override
+    public int findMin(List<Integer> list) {
+        return super.findMin(list);
+    }
+
+    //фасад, прокси, цепочка, наблюдатель
 }

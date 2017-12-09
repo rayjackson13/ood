@@ -166,4 +166,34 @@ public class CommonTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void testDecorator(){
+        Integer[] arr1 = {234, 123, 101};
+        Integer[] arr2 = {789, 101, 107};
+        Integer expMax = 789;
+        Integer expMin = 101;
+        List<Integer> act1 = Arrays.asList(arr1);
+        List<Integer> act2 = Arrays.asList(arr2);
+        Director instance = Director.getInstance(3, act1, act2);
+        Integer actMax = instance.findMax(instance.getResult());
+        Integer actMin = instance.findMin(instance.getResult());
+        assertEquals(expMax, actMax);
+        assertEquals(expMin, actMin);
+    }
+
+    @Test
+    public void testFacade(){
+        Integer[] arr1 = {234, 123, 101};
+        Integer[] arr2 = {789, 101, 107};
+        Integer[] exp = {101, 101, 107, 123, 234, 789};
+        List<Integer> expected = Arrays.asList(exp);
+        List<Integer> act1 = Arrays.asList(arr1);
+        List<Integer> act2 = Arrays.asList(arr2);
+
+        SortFacade sortFacade = new SortFacade();
+        List<Integer> actual = sortFacade.sort(act1, act2, 3);
+
+        assertEquals(expected, actual);
+    }
+
 }
