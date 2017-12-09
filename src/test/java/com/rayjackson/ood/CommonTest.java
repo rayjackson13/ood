@@ -196,4 +196,18 @@ public class CommonTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void testProxy(){
+        Integer[] arr1 = {234, 123, 101};
+        Integer[] arr2 = {789, 101, 107};
+        Integer[] exp = {101, 101, 107, 123, 234, 789};
+        List<Integer> expected = Arrays.asList(exp);
+        List<Integer> act1 = Arrays.asList(arr1);
+        List<Integer> act2 = Arrays.asList(arr2);
+
+        List<Integer> actual = new Proxy(3, act1, act2).getResult();
+
+        assertEquals(expected, actual);
+    }
+
 }

@@ -66,5 +66,5 @@ public class Director extends Decorator implements Serializable, IPrototype{
         return super.findMin(list);
     }
 
-    //фасад, прокси, цепочка, наблюдатель
+    //цепочка, наблюдатель
 }
